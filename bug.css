@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule is intended to override both previous rules */
+}
+```
+
+The intended behavior is for text within a paragraph element that is a child of a div element to be green. However, depending on the browser and the way the CSS is interpreted, the paragraph's color might remain red, inheriting from the `p` selector.
+
+This happens because of the specificity of CSS rules. The `div p` selector has equal specificity to the `p` selector. The order in which the styles are declared determines which style takes precedence in this case.  Some browsers might follow a different cascade order.
+
+This demonstrates a subtle and potentially unpredictable error that's not always immediately obvious.
