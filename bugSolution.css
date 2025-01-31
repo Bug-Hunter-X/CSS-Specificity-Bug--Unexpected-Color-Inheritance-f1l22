@@ -1,0 +1,17 @@
+To solve the specificity issue and ensure the paragraph text within the div is green, you can increase the specificity of the `div p` selector by adding another selector:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div > p {
+  color: green; /* Increased specificity by using the child combinator > */
+}
+```
+
+Using the child combinator `>` ensures that the style only applies to direct children of the `div`, and guarantees that the rule with higher specificity overrides both previous styles. This change ensures consistent behavior across various browsers.
